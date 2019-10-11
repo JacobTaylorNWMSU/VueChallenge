@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue App Challenge</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+        <style>
+            .main{
+                padding: 0px;
+                position:absolute;
+                left:40%;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="main">
+            <h2>Temperature Converter</h2>
+            <label>Kelvin</label>
+            <input id="inputKelvin" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+            <p>Celcius: <span id="outputCelcius"></span></p>
+          
+            <script>
+                function temperatureConverter(valNum) {
+                    valNum = parseFloat(valNum);
+                    document.getElementById("outputCelcius").innerHTML=(valNum-273.15).toFixed("2");
+                }
+            </script>
+        </div>
+    </body>
+</html>
